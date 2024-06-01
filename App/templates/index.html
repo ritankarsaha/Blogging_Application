@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="masthead">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h3 class="site-heading my-4 mt-3 text-black"> Welcome to Ritankar's Blog ✍️ </h3>
+          <p class="text-dark"> Have Fun Reading!! ✨✨✨ </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mt-3 left">
+      {% for post in post_list %}
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">{{ post.title }}</h2>
+          <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on }}</p>
+          <p class="card-text">{{ post.content|slice:":400 "|safe }}</p>
+          <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read More &rarr;</a>
+          <div class="mt-3">
+            <a href="{% url 'upvote_post' post.slug %}" class="btn btn-outline-success"><i class="fas fa-thumbs-up"></i> {{ post.upvotes }}</a>
+            <a href="{% url 'clap_post' post.slug %}" class="btn btn-outline-warning"><i class="fas fa-sign-language"></i> {{ post.claps }}</a>
+            <button type="button" class="btn btn-outline-info" onclick="sharePost('{{ post.title }}', '{{ request.build_absolute_uri }}')">
+              <i class="fas fa-share"></i> Share
+            </button>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+  </div>
+</div>
+
+<script>
+function sharePost(title, url) {
+  if (navigator.share) {
+    navigator.share({
+      title: title,
+      url: url
+    }).then(() => {
+      console.log('Thanks for sharing!');
+    }).catch(console.error);
+  } else {
+    window.prompt("Copy and share the link:", url);
+  }
+}
+</script>
+{% endblock %}

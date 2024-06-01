@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1>Experiences:-</h1>
+  <div class="timeline">
+    <div class="timeline-event">
+      <div class="card my-4">
+        <div class="card-header">
+          Internship Achievement <span class="badge badge-primary float-right">May 2024 - Aug 2024</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">GSSoC'24 Open Source Contributor</h5>
+          <p class="card-text">I am excited to share that I secured an internship as an Open Source Contributor in GSSoC'24. During this internship, I actively contributed to various projects, solving over 13 bugs, making 28 enhancements, and opening 37 issues across 7 repositories. I was also a contributor of the shopping startup Indie-Kart website where i helped in setting up the JWT tokens of the website for hassele free login/logout. I am proud to say that 95% of my pull requests were successfully merged.</p>
+          <a href="https://drive.google.com/file/d/15QFYPRyeasNEGaep9x7mncBi4fFS5-Fs/view?usp=sharing" target="_blank" class="btn btn-primary">Contributor Badge</a>
+          <a href="" target="_blank" class="btn btn-primary">View Certificate</a>
+          <a href="https://drive.google.com/file/d/1lbUgD6cmTyYNTE1iW6KpmInjIDrHdDg_/view?usp=sharing" target="_blank" class="btn btn-primary">Selection Overview</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-5">
+  <h1>Honours and Awards:-</h1>
+  <div class="timeline">
+    <div class="timeline-event">
+      <div class="card my-4">
+        <div class="card-header">
+          Techkriti'24 IIT Kanpur <span class="badge badge-primary float-right">Jan-2024</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">3rd Place in Re-Dev Competition & CTF</h5>
+          <p class="card-text">I am elated to announce that I have secured 3rd place in the Re-Dev (Web Dev) competition and CTF(Capture The Flag) competition(cybersecurity competition) of Techkriti'24. The topic for the Re-Dev competition was to build a scalabe full-stack website on real estate development. </p>
+          <a href="https://drive.google.com/file/d/1Mp3ubUVoTbc9jWQ1SrJlkOouLxn-f8wd/view?usp=sharing" target="_blank" class="btn btn-primary">Re-Dev Merit Certificate</a>
+          <a href="https://drive.google.com/file/d/1ATtUfkcSZuP9KCiwIlf0aT3gN8xkMt0A/view?usp=sharing" target="_blank" class="btn btn-primary">Re-Dev Participation Certificate</a>
+          <a href="" target="_blank" class="btn btn-primary">CTF Merit Certificate</a>
+          <a href="https://drive.google.com/file/d/1OQmtxwX2IlD9cAi9rP7YLyaNYphTnZf2/view?usp=sharing" target="_blank" class="btn btn-primary">CTF Participation Certificate</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .timeline {
+    position: relative;
+    margin: 20px 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #ddd;
+    transform: translateX(-50%);
+  }
+
+  .timeline-event {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .timeline-event::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #007bff;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+  }
+
+  .timeline-event .card {
+    margin: 0;
+    border-radius: 6px;
+    box-shadow: 0 16px 48px rgba(106, 106, 107, 0.2);
+  }
+
+  .timeline-event .badge {
+    font-size: 0.9rem;
+    font-weight: normal;
+  }
+</style>
+{% endblock %}
